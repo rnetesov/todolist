@@ -31,11 +31,4 @@ return [
             'class' => 'yii\faker\FixtureController',
         ],
     ],
-    'bootstrap' => ['debug'],
-
-    'modules' => [
-        'debug' => [
-            'class' => 'yii\debug\Module',
-        ],
-    ],
 ];
