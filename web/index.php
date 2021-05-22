@@ -12,7 +12,7 @@ require_once __DIR__ . '/../config/functions.php';
 
 $config = require_once __DIR__ . '/../config/web.php';
 
-if (!YII_DEBUG) {
+if (YII_DEBUG) {
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
