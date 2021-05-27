@@ -78,11 +78,11 @@ use yii\helpers\Url;
                 'enableSorting' => true,
                 'value' => function ($data) use ($user) {
                     if ($user->isManager()) {
-                        return Html::a($data->title, Url::to(['task/update', 'id' => $data->id]), [
+                        return Html::a(htmlspecialchars($data->title), Url::to(['task/update', 'id' => $data->id]), [
                             'class' => 'edit'
                         ]);
                     }
-                    return $data->title;
+                    return htmlspecialchars($data->title);
                 },
                 'format' => 'raw'
             ],
