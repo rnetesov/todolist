@@ -69,7 +69,10 @@ class UserModel extends ActiveRecord implements IdentityInterface
     {
         return [
             [['firstname', 'lastname', 'patronymic', 'login', 'password'], 'required'],
+            ['password', 'string', 'length' => [3, 10]],
+            ['login', 'match', 'pattern' => '/^[a-z][a-z0-9_-]+$/i'],
             ['role', 'in', 'range' => array_keys(self::ROLES)],
+            ['login', 'unique']
         ];
     }
 
